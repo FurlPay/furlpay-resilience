@@ -1,0 +1,59 @@
+{
+  "name": "@furlpay/resilience",
+  "version": "0.1.0",
+  "description": "Zero-dependency resilience primitives for financial clients \u2014 sliding-window circuit breaker, full-jitter retry, rate limiting, multi-endpoint RPC failover, and resilient SSE. Node 20+ and Edge compatible.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/src",
+    "src",
+    "index.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/circuit-breaker.test.js dist/tests/retry.test.js dist/tests/rate-limiter.test.js dist/tests/failover-pool.test.js dist/tests/client.test.js dist/tests/event-stream.test.js"
+  },
+  "keywords": [
+    "resilience",
+    "circuit-breaker",
+    "retry",
+    "backoff",
+    "rate-limit",
+    "failover",
+    "rpc",
+    "sse",
+    "fintech",
+    "furlpay"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FurlPay/furlpay-resilience.git"
+  },
+  "homepage": "https://github.com/FurlPay/furlpay-resilience#readme",
+  "bugs": {
+    "url": "https://github.com/FurlPay/furlpay-resilience/issues"
+  },
+  "author": "FurlPay",
+  "publishConfig": {
+    "access": "public"
+  }
+}
